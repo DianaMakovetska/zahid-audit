@@ -1,0 +1,80 @@
+*{
+  font-family: Montserrat;
+}
+.container-fluid{
+  min-height: 100vh;
+}
+
+#map {
+  height: 50vh;
+  width: 100%;
+}
+
+form{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title{
+  height: 50vh;
+  background: #FCF0F7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contactsBlock{
+  height: 50vh;
+  background: #FCF0F7;
+  text-align: center;
+  color: #A61D68;
+}
+.title .tagline{
+  color: rgba(166, 29, 104, 1);
+}
+.mapWrapper{
+  width: 100%;
+}
+
+.contacts{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  background-color: white;
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+  color: black;
+}
+
+.icon{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #F2DDE8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactItem{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 770px) {
+  .contacts{
+    width: 90%;
+    flex-direction: column;
+  }
+  .tagline{
+    font-size: 20px;
+  }
+
+  .contactItem{
+    flex-direction: row;
+  }
+
+}

@@ -1,0 +1,68 @@
+*{
+  font-family: Montserrat;
+}
+.btn.focus, .btn:focus{
+  box-shadow: none !important;
+  border-bottom: 2px solid #A61D68;
+  color: rgba(166, 29, 104, 1);
+}
+img{
+  width: 100%;
+}
+
+::ng-deep .modal{
+  width: max-content;
+}
+
+::ng-deep .modal-content{
+  animation-name: example;
+  animation-duration: 0.1s;
+}
+
+@keyframes example {
+  0% {
+    right: 0;
+  }
+  50% {
+    right: 100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+
+::ng-deep .modal.fade .modal-dialog{
+transition: none;
+  transform: none;
+}
+
+.menuIcon:hover{
+  cursor: pointer;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1400px){
+.btn{
+  font-size: 13px;
+  padding: 0;
+}
+  .contacts{
+    font-size: 12px;
+  }
+}
+.contacts{
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+@media only screen and (min-width : 1500px) {
+.contacts{
+  flex-direction: row;
+}
+}
+
+.menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

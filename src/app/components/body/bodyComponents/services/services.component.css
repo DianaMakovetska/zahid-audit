@@ -1,0 +1,71 @@
+*{
+  font-family: Montserrat;
+}
+
+::ng-deep .card-header{
+  background-color: white;
+}
+.fixedBackground{
+  background-image: url("src/assets/images/services1.png");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 400px;
+}
+
+ .btn:active, .btn:focus {
+   background: linear-gradient(90deg, #A61D68 18.18%, #A61D68 18.18%, rgba(250, 250, 250, 0.04) 106.68%) !important;
+  box-shadow: none !important;
+   border: none !important;
+   color: white;
+}
+ .servicesImg1 img{
+   width: 100%;
+ }
+.companyPolicyBlock{
+  background-image: url("src/assets/images/services2.png");
+  background-size: cover;
+  height: 500px;
+  text-align: left;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 174.9%;
+}
+.overlay{
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(35,38,102,.38);
+  position: absolute;
+}
+.title{
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 154.4%;
+  text-transform: uppercase;
+  color: #A61D68;
+}
+.title2{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 172.4%;
+  text-transform: uppercase;
+  color: #A61D68;
+}
+
+.freeText{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 174.9%;
+  color: #444444;
+}
+
+.divider{
+  border-top: 2px solid #521938;
+}
+.btn{
+  width: 100% !important;
+  white-space: pre-wrap !important;
+}

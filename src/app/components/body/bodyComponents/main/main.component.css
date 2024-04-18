@@ -1,0 +1,89 @@
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  position: relative;
+  background-image: url("src/assets/images/mainPage.png");
+  background-size: cover;
+  height: 700px;
+}
+
+.overlay {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(35, 38, 102, .42);
+  position: absolute;
+}
+
+.directions {
+  flex: 0 1 auto;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 130.9%;
+}
+
+.directionsWrapper {
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.audit {
+  background: rgba(207, 207, 207, 0.5);
+  position: relative;
+}
+
+.audit .backdrop {
+  background: rgba(207, 207, 207, 0.5);
+}
+
+.tax {
+  background: rgba(253, 239, 203, 0.5);
+  position: relative;
+}
+
+.tax .backdrop {
+  background: rgba(253, 239, 203, 0.5);
+}
+
+.advisory {
+  background: rgba(243, 219, 206, 0.5);
+  position: relative;
+}
+
+.advisory .backdrop {
+  background: rgba(243, 219, 206, 0.5);
+}
+
+.backdrop {
+  filter: blur(40px);
+  -o-filter: blur(40px);
+  -ms-filter: blur(40px);
+  -moz-filter: blur(40px);
+  -webkit-filter: blur(40px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  color: white;
+}
+
+@media screen and (max-width: 600px) {
+  .tagline {
+    font-size: 20px;
+  }
+
+}
+
