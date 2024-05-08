@@ -74,7 +74,9 @@ const routes:Routes = [
     TabsModule.forRoot(),
     MatButtonToggleModule,
     MatButtonModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+}),
     MatToolbarModule,
     ModalModule,
     BsDropdownModule,
