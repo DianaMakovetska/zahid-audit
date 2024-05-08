@@ -22,7 +22,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CommonModule} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
-import {MatButtonModule} from "@angular/material/button";
+import {MatLegacyButtonModule as MatButtonModule} from "@angular/material/legacy-button";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {RouterModule, Routes} from "@angular/router";
 import {BsDropdownModule} from "ngx-bootstrap/dropdown";
