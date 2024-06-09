@@ -156,7 +156,14 @@
           "builder": "@nguniversal/builders:prerender",
           "options": {
             "routes": [
-              "/"
+              "/",
+              "/about-us",
+              "/benefits",
+              "/team",
+              "/vacancies",
+              "/services",
+              "/partners",
+              "/contacts"
             ]
           },
           "configurations": {

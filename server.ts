@@ -1,18 +1,30 @@
 import 'zone.js/node';
 
-import { APP_BASE_HREF } from '@angular/common';
-import { ngExpressEngine } from '@nguniversal/express-engine';
+import {APP_BASE_HREF} from '@angular/common';
+import {ngExpressEngine} from '@nguniversal/express-engine';
 import * as express from 'express';
-import { existsSync } from 'node:fs';
-import { join } from 'node:path';
-import { AppServerModule } from './src/main.server';
+import {existsSync} from 'node:fs';
+import {join} from 'node:path';
+import {AppServerModule} from './src/main.server';
+
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
+  const xmlbuilder = require('xmlbuilder');
   const distFolder = join(process.cwd(), 'dist/ZahidAuditService/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
+  const routes = [
+    '/',
+    '/about-us',
+    '/benefits',
+    '/team',
+    '/vacancies',
+    '/services',
+    '/partners',
+    '/contacts',
+  ];
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule
@@ -28,10 +40,25 @@ export function app(): express.Express {
     maxAge: '1y'
   }));
 
+  server.get('/sitemap.xml', (req, res) => {
+    const root = xmlbuilder.create('urlset', {version: '1.0', encoding: 'UTF-8'});
+    root.att('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+
+    routes.forEach(route => {
+      const url = root.ele('url');
+      url.ele('loc', `https://zahidaudit.com${route}`);
+      // You can add more elements like <changefreq> and <priority> here if needed
+    });
+
+    res.header('Content-Type', 'application/xml');
+    res.send(root.end({pretty: true}));
+  });
+
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+    res.render(indexHtml, {req, providers: [{provide: APP_BASE_HREF, useValue: req.baseUrl}]});
   });
+
 
   return server;
 }
